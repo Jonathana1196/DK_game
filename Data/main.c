@@ -153,7 +153,7 @@ void ventana(){
                 int delayPerFrameM = 100;
                 windowRectM.w = 35;
                 windowRectM.h = 35;
-                windowRectM.x += 1.5;
+                windowRectM.x += 2;
                 move(windowRectM.x);
                 int frameM = (SDL_GetTicks() / delayPerFrameM) % totalFramesM;
                 textureRectM.x = frameM * textureRectM.w;
@@ -178,7 +178,7 @@ void ventana(){
                 windowRectM.h = 35;
                 int frameM = (SDL_GetTicks() / delayPerFrameM) % totalFramesM;
                 textureRectM.x = frameM * textureRectM.w;
-                windowRectM.x -= 1.5;
+                windowRectM.x -= 2;
                 move(windowRectM.x);
                 if(walk==45){
                     walk=0;
@@ -200,9 +200,9 @@ void ventana(){
                 int frameM = (SDL_GetTicks() / delayPerFrameM) % totalFramesM;
                 textureRectM.x = frameM * textureRectM.w;
                 if (event.key.keysym.sym == SDLK_UP) {
-                    windowRectM.y -= 1;
+                    windowRectM.y -= 2;
                 } else if (event.key.keysym.sym == SDLK_DOWN) {
-                    windowRectM.y += 1;
+                    windowRectM.y += 2;
                 }
 
 
@@ -217,17 +217,18 @@ void ventana(){
         }
         if (jumping) {
             jum=false;
-            if (jump==80){
+            if (jump==50){
                 jump=0;
                 jum=true;
                 jumping=false;
+                windowRectM.y -= 2;
             }
-            else if (jump <= 39) {
-                windowRectM.y -= 1;
+            else if (jump <= 24) {
+                windowRectM.y -= 2;
 
             }
             else {
-                windowRectM.y += 1;
+                windowRectM.y += 2;
 
             }
             jump++;
