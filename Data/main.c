@@ -18,71 +18,140 @@ static SDL_Rect textureRectP;
 static SDL_Rect windowRectP;
 static SDL_Rect textureRectD;
 static SDL_Rect windowRectD;
-void move(int x){
+void moveR(int x){
     if((510<=windowRectM.y) && (x>275) &&!jumping){
         windowRectM.y-=1;
     }
-    if((505<=windowRectM.y) && (x>375)&&!jumping){
+    else if((505<=windowRectM.y) && (x>375)&&!jumping){
         windowRectM.y-=1;
     }
-    if((500<=windowRectM.y) && (x>475)&&!jumping){
+   else if((500<=windowRectM.y) && (x>550)&&!jumping){
         windowRectM.y-=1;
     }
-    if((435<=windowRectM.y) && (x<375)&&(500>=windowRectM.y)&&!jumping){
+    else if((435>=windowRectM.y) && (x>375)&&(410<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+    else if((430>=windowRectM.y) && (x>275)&&(410<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+    else if((425>=windowRectM.y) && (x>175)&&(410<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+    else if((420>=windowRectM.y) && (x>75)&&(410<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+    else if((355<=windowRectM.y) && (x>175)&&(500>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
-    if((430<=windowRectM.y) && (x<275)&&(500>=windowRectM.y)&&!jumping){
+    else if((350<=windowRectM.y) && (x>230)&&(500>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
-    if((425<=windowRectM.y) && (x<175)&&(500>=windowRectM.y)&&!jumping){
+    else if((345<=windowRectM.y) && (x>330)&&(500>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
-    if((420<=windowRectM.y) && (x<75)&&(500>=windowRectM.y)&&!jumping){
+    else if((340<=windowRectM.y) && (x>430)&&(500>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
-    if((355<=windowRectM.y) && (x>175)&&(420>=windowRectM.y)&&!jumping){
+   else  if((270>=windowRectM.y) && (x>430)&&(190<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+    else if((265>=windowRectM.y) && (x>330)&&(190<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+    else if((260>=windowRectM.y) && (x>230)&&(190<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+    else if((255>=windowRectM.y) && (x>175)&&(190<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+    else if((190<=windowRectM.y) && (x>75)&&(230>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
-    if((350<=windowRectM.y) && (x>230)&&(420>=windowRectM.y)&&!jumping){
+    else if((185<=windowRectM.y) && (x>130)&&(230>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
-    if((345<=windowRectM.y) && (x>330)&&(420>=windowRectM.y)&&!jumping){
+    else if((180<=windowRectM.y) && (x>230)&&(230>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
-    if((340<=windowRectM.y) && (x>430)&&(420>=windowRectM.y)&&!jumping){
+    else if((175<=windowRectM.y) && (x>330)&&(230>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
-    if((270<=windowRectM.y) && (x<430)&&(340>=windowRectM.y)&&!jumping){
+    else if((115>=windowRectM.y) && (x>430)&&(75<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+    else if((110>=windowRectM.y) && (x>330)&&(75<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+    else if((105>=windowRectM.y) && (x>275)&&(75<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+
+}
+void moveL(int x){
+    if((510>=windowRectM.y) && (x<275) &&!jumping &&(495<=windowRectM.y)){
+        windowRectM.y+=1;
+    }
+    else if((505>=windowRectM.y) && (x<375)&&!jumping &&(495<=windowRectM.y)){
+        windowRectM.y+=1;
+    }
+    else if((500>=windowRectM.y) && (x<475)&&!jumping &&(495<=windowRectM.y)){
+        windowRectM.y+=1;
+    }
+    else if((435<=windowRectM.y) && (x<375)&&(470>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
-    if((265<=windowRectM.y) && (x<330)&&(340>=windowRectM.y)&&!jumping){
+    else if((430<=windowRectM.y) && (x<275)&&(470>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
-    if((260<=windowRectM.y) && (x<230)&&(340>=windowRectM.y)&&!jumping){
+    else if((425<=windowRectM.y) && (x<175)&&(470>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
-    if((255<=windowRectM.y) && (x<175)&&(340>=windowRectM.y)&&!jumping){
+    else if((420<=windowRectM.y) && (x<75)&&(470>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
-    if((190<=windowRectM.y) && (x>175)&&(255>=windowRectM.y)&&!jumping){
+    else if((355>=windowRectM.y) && (x<175)&&(335<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+    else if((350>=windowRectM.y) && (x<230)&&(335<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+    else if((345>=windowRectM.y) && (x<330)&&(335<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+    else if((340>=windowRectM.y) && (x<430)&&(335<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+    else if((270<=windowRectM.y) && (x<430)&&(340>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
-    if((185<=windowRectM.y) && (x>230)&&(255>=windowRectM.y)&&!jumping){
+    else if((265<=windowRectM.y) && (x<330)&&(340>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
-    if((180<=windowRectM.y) && (x>330)&&(255>=windowRectM.y)&&!jumping){
+    else if((260<=windowRectM.y) && (x<230)&&(340>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
-    if((175<=windowRectM.y) && (x>430)&&(255>=windowRectM.y)&&!jumping){
+    else if((255<=windowRectM.y) && (x<175)&&(340>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
-    if((115<=windowRectM.y) && (x<430)&&(175>=windowRectM.y)&&!jumping){
+    else if((190>=windowRectM.y) && (x<175)&&(170<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+    else if((185>=windowRectM.y) && (x<230)&&(170<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+    else if((180>=windowRectM.y) && (x<330)&&(170<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+    else if((175>=windowRectM.y) && (x<430)&&(170<=windowRectM.y)&&!jumping){
+        windowRectM.y+=1;
+    }
+    else if((115<=windowRectM.y) && (x<430)&&(175>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
-    if((110<=windowRectM.y) && (x<330)&&(175>=windowRectM.y)&&!jumping){
+    else if((110<=windowRectM.y) && (x<330)&&(175>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
-    if((105<=windowRectM.y) && (x<275)&&(175>=windowRectM.y)&&!jumping){
+    else if((105<=windowRectM.y) && (x<275)&&(175>=windowRectM.y)&&!jumping){
         windowRectM.y-=1;
     }
 
@@ -154,7 +223,9 @@ void ventana(){
                 windowRectM.w = 35;
                 windowRectM.h = 35;
                 windowRectM.x += 2;
-                move(windowRectM.x);
+                moveR(windowRectM.x);
+                printf("\neje X:%i",windowRectM.x);
+                printf("\neje Y: %i",windowRectM.y);
                 int frameM = (SDL_GetTicks() / delayPerFrameM) % totalFramesM;
                 textureRectM.x = frameM * textureRectM.w;
                 if(walk==45){
@@ -165,8 +236,6 @@ void ventana(){
                     walk=0;
                 }
                 walk++;
-                printf("\n%i",windowRectM.x);
-                printf("\n%i",windowRectM.y);
             }
                 else if (event.key.keysym.sym == SDLK_LEFT && !stairs) {
                 tempM = IMG_Load("../Data/marioM.png");
@@ -179,7 +248,9 @@ void ventana(){
                 int frameM = (SDL_GetTicks() / delayPerFrameM) % totalFramesM;
                 textureRectM.x = frameM * textureRectM.w;
                 windowRectM.x -= 2;
-                move(windowRectM.x);
+                moveL(windowRectM.x);
+                printf("\neje X:%i",windowRectM.x);
+                printf("\neje Y: %i",windowRectM.y);
                 if(walk==45){
                     walk=0;
                 }
@@ -217,13 +288,13 @@ void ventana(){
         }
         if (jumping) {
             jum=false;
-            if (jump==50){
+            if (jump==40){
                 jump=0;
                 jum=true;
                 jumping=false;
                 windowRectM.y -= 2;
             }
-            else if (jump <= 24) {
+            else if (jump <= 19) {
                 windowRectM.y -= 2;
 
             }
