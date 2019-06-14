@@ -69,7 +69,7 @@ void Getbarril(char* tipo){
     else if(tipo=="N") {
         SDL_Rect windowRectB;
         SDL_Rect textureRectB;
-        SDL_Surface* tempB = IMG_Load("../Data/barril2.png");
+        SDL_Surface* tempB = IMG_Load("../Data/barril1.png");
         SDL_Texture* spriteSheetB = SDL_CreateTextureFromSurface(renderer, tempB);
         SDL_FreeSurface(tempB);
         windowRectB.x = 180;
