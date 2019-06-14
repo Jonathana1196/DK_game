@@ -9,7 +9,9 @@ static SDL_Surface* surface;
 static SDL_Renderer* renderer;
 static int jump=0;
 static  bool jumping = false;
+static bool stop=true;
 static bool stairs=false;
+static bool in=false;
 static int walk=0;
 static bool jum=true;
 static SDL_Rect textureRectM;
@@ -22,6 +24,9 @@ static SDL_Texture* spriteSheetD;
 static SDL_Texture* spriteSheetP;
 static SDL_Texture* spriteSheetM;
 static SDL_Surface* tempM;
+int length=1;
+static int ini=0;
+static int limit=0;
 void moveR(int x){
     if((510<=windowRectM.y) && (x>275) &&!jumping){
         windowRectM.y-=1;
@@ -204,6 +209,7 @@ void eventos(SDL_Event event){
     Mix_Chunk *jumpsund=Mix_LoadWAV("../Data/jump.wav");
     Mix_Chunk* walking=Mix_LoadWAV("../Data/walking.wav");
     if (event.key.keysym.sym == SDLK_RIGHT && !stairs) {
+        stop=true;
         tempM = IMG_Load("../Data/marioML.png");
         spriteSheetM = SDL_CreateTextureFromSurface(renderer, tempM);
         textureRectM.w = 18;
@@ -227,6 +233,7 @@ void eventos(SDL_Event event){
         walk++;
     }
     else if (event.key.keysym.sym == SDLK_LEFT && !stairs) {
+        stop=true;
         tempM = IMG_Load("../Data/marioM.png");
         spriteSheetM = SDL_CreateTextureFromSurface(renderer, tempM);
         textureRectM.w = 18;
@@ -249,22 +256,35 @@ void eventos(SDL_Event event){
         }
         walk++;
 
-    } else if (event.key.keysym.sym == SDLK_UP || event.key.keysym.sym == SDLK_DOWN) {
-        tempM = IMG_Load("../Data/marioU.png");
-        spriteSheetM = SDL_CreateTextureFromSurface(renderer, tempM);
-        textureRectM.w = 15;
-        int totalFramesM = 2;
-        int delayPerFrameM = 100;
-        windowRectM.w = 35;
-        windowRectM.h = 35;
-        int frameM = (SDL_GetTicks() / delayPerFrameM) % totalFramesM;
-        textureRectM.x = frameM * textureRectM.w;
-        if (event.key.keysym.sym == SDLK_UP) {
-            windowRectM.y -= 2;
-        } else if (event.key.keysym.sym == SDLK_DOWN) {
-            windowRectM.y += 2;
+    } else if ((event.key.keysym.sym == SDLK_UP || event.key.keysym.sym == SDLK_DOWN)) {
+        onStairs();
+        if (in){
+            tempM = IMG_Load("../Data/marioU.png");
+            spriteSheetM = SDL_CreateTextureFromSurface(renderer, tempM);
+            textureRectM.w = 15;
+            int totalFramesM = 2;
+            int delayPerFrameM = 100;
+            windowRectM.w = 35;
+            windowRectM.h = 35;
+            int frameM = (SDL_GetTicks() / delayPerFrameM) % totalFramesM;
+            textureRectM.x = frameM * textureRectM.w;
+            if(length==0|| length>limit){
+                stairs=false;
+                in=false;
+                length=-limit;
+                stop=false;
+                printf("FIN ESCALERS");
+            }
+            if (event.key.keysym.sym == SDLK_UP) {
+                windowRectM.y -= 2;
+                length++;
+                printf("\nNUMERO%i",length);
+            }
+             if (event.key.keysym.sym == SDLK_DOWN) {
+                windowRectM.y += 2;
+                length++;
+            }
         }
-
 
     }
     if (event.key.keysym.sym == SDLK_SPACE && !stairs) {
@@ -274,7 +294,70 @@ void eventos(SDL_Event event){
         }
     }
 }
+void onStairs(){
+    if(stop){
+        if(!stairs){
+            if (windowRectM.x<475&&windowRectM.x>455 && (windowRectM.y>=435 && windowRectM.y<=505)){
+                in=true;
+                stairs=true;
+                limit=30;
+                length=1;
+            }
+            else if (windowRectM.x<260&&windowRectM.x>235 && (windowRectM.y>=345 && windowRectM.y<=429)){
+                in=true;
+                stairs=true;
+                limit=40;
+                length=1;
+            }
+            else if (windowRectM.x<100&&windowRectM.x>80 && (windowRectM.y>=355 && windowRectM.y<=425)){
+                in=true;
+                stairs=true;
+                limit=30;
+                length=1;
+            }
+            else if (windowRectM.x<305&&windowRectM.x>275 && (windowRectM.y>=260 && windowRectM.y<=350)){
+                in=true;
+                stairs=true;
+                limit=40;
+                length=1;
+            }
+            else if (windowRectM.x<475&&windowRectM.x>455 && (windowRectM.y>=270 && windowRectM.y<=340)){
+                in=true;
+                stairs=true;
+                limit=30;
+                length=1;
+            }
+            else if (windowRectM.x<200&&windowRectM.x>180 && (windowRectM.y>=185 && windowRectM.y<=260)){
+                in=true;
+                stairs=true;
+                limit=35;
+                length=1;
 
+            }
+            else if (windowRectM.x<100&&windowRectM.x>80 && (windowRectM.y>=190 && windowRectM.y<=255)){
+                in=true;
+                stairs=true;
+                limit=30;
+                length=1;
+
+            }
+            else if (windowRectM.x<475&&windowRectM.x>455 && (windowRectM.y>=106 && windowRectM.y<=176)){
+                in=true;
+                stairs=true;
+                limit=30;
+                length=1;
+            }
+            else if (windowRectM.x<340&&windowRectM.x>320 && (windowRectM.y>=45 && windowRectM.y<=112)) {
+                in = true;
+                stairs = true;
+                limit = 35;
+                length=1;
+
+            }
+        }
+    }
+
+}
 void ventana() {
     SDL_Init(SDL_INIT_EVERYTHING);
     Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2018);
