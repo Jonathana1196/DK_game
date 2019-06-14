@@ -14,11 +14,10 @@ int sock = 0, valread;
 struct sockaddr_in serv_addr;
 char *hello = "Hello from client";
 char buffer2[1024] ;
-void continua(){
-
-    return 0;
-
-}
+/**
+ * ESta funcion lo que realiza es conectar el socket
+ * @return
+ */
 void * conectar_Socket(){
     printf("LOL");
 
@@ -61,7 +60,7 @@ void * conectar_Socket(){
         if(!strcmp1("get",buffer2)){
             char* cosas = "prueba";
             //TIENEN QUE DEFINIR QUE ES COSAS QUE ES EL MENSAJE QUE USTEDES OCUPAN ENVIAR CON LA INFo y asignar "cosas'
-           valread= send(sock,cosas,strlen(cosas),0);
+            valread= send(sock,cosas,strlen(cosas),0);
 
         }
         else{
@@ -70,11 +69,9 @@ void * conectar_Socket(){
         }
     }
 }
-void * conectar_Socket2(){
-    sleep(0.5);
-    conectar_Socket();
-
-}
+/**
+ * En esta funcion se escucha de forma continua al servidor
+ */
 void escuchar(){
     memset(buffer2,0,1024);
     valread = read( sock , buffer2, 1024);
@@ -85,16 +82,22 @@ void escuchar(){
         memset(buffer2,0,1024)    ;
         valread = read( sock , buffer2, 1024);
         //AQUI VA LA QUE HACE QUE TODAS LAS COSAS SE MUEVAN
-if(valread==0){
-    conectar_Socket();
-    break;
-}
+        if(valread==0){
+            conectar_Socket();
+            break;
+        }
     }
 }
 void funcion(){
     printf("Este fue el primero");
 }
 void send_caracteristicas
+/**
+ * Compara los diferentes strings
+ * @param s el string 1
+ * @param p el string 2
+ * @return
+ */
 int strcmp1(char *s, char *p){
     int indice = 0;
     while (1==1){
