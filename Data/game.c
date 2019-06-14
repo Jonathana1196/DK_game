@@ -4,6 +4,7 @@
 #include <SDL2/SDL_mixer.h>
 #include <SDL2/SDL_image.h>
 #include <stdbool.h>
+#include "cliente.h"
 
 static SDL_Window *window;
 static SDL_Surface *surface;
@@ -46,68 +47,70 @@ static int bC = 0;
 static int bN = 0;
 static int bT = 0;
 static SDL_Rect tempBar;
+
 /**
  * Los barriles se crean a partir de esta funcion
  * @param tipo es un char que se compara con los tipos
  */
 void Getbarril(char *tipo) {
-    if (tipo == "C") {
-        SDL_Rect windowRectB;
-        SDL_Rect textureRectB;
+    if (strcmp1(tipo, "C")) {
+        SDL_Rect *windowRectB = malloc(sizeof(SDL_Rect));
+        SDL_Rect *textureRectB = malloc(sizeof(SDL_Rect));
         SDL_Surface *tempB = IMG_Load("../Data/Images/barril2.png");
         SDL_Texture *spriteSheetB = SDL_CreateTextureFromSurface(renderer, tempB);
         SDL_FreeSurface(tempB);
-        windowRectB.x = 200;
-        windowRectB.y = 80;
-        windowRectB.w = 30;
-        windowRectB.h = 30;
-        textureRectB.x = 0;
-        textureRectB.y = 0;
-        SDL_QueryTexture(spriteSheetB, NULL, NULL, &textureRectB.w, &textureRectB.h);
-        textureRectB.w /= 4;
-        barrilesC[bC] = windowRectB;
-        barrilestC[bC] = textureRectB;
+        windowRectB->x = 200;
+        windowRectB->y = 80;
+        windowRectB->w = 30;
+        windowRectB->h = 30;
+        textureRectB->x = 0;
+        textureRectB->y = 0;
+        SDL_QueryTexture(spriteSheetB, NULL, NULL, &textureRectB->w, &textureRectB->h);
+        textureRectB->w /= 4;
+        barrilesC[bC] = *windowRectB;
+        barrilestC[bC] = *textureRectB;
         barrilessC[bC] = spriteSheetB;
         barrilesC[bC].x = rand() % 500;
         bC++;
-    } else if (tipo == "N") {
-        SDL_Rect windowRectB;
-        SDL_Rect textureRectB;
+    } else if (strcmp1(tipo, "N")) {
+        SDL_Rect *windowRectB = malloc(sizeof(SDL_Rect));
+        SDL_Rect *textureRectB = malloc(sizeof(SDL_Rect));
         SDL_Surface *tempB = IMG_Load("../Data/Images/barril1.png");
         SDL_Texture *spriteSheetB = SDL_CreateTextureFromSurface(renderer, tempB);
         SDL_FreeSurface(tempB);
-        windowRectB.x = 180;
-        windowRectB.y = 110;
-        windowRectB.w = 30;
-        windowRectB.h = 30;
-        textureRectB.x = 0;
-        textureRectB.y = 0;
-        SDL_QueryTexture(spriteSheetB, NULL, NULL, &textureRectB.w, &textureRectB.h);
-        textureRectB.w /= 4;
-        barrilesN[bN] = windowRectB;
-        barrilestN[bN] = textureRectB;
+        windowRectB->x = 180;
+        windowRectB->y = 110;
+        windowRectB->w = 30;
+        windowRectB->h = 30;
+        textureRectB->x = 0;
+        textureRectB->y = 0;
+        SDL_QueryTexture(spriteSheetB, NULL, NULL, &textureRectB->w, &textureRectB->h);
+        textureRectB->w /= 4;
+        barrilesN[bN] = *windowRectB;
+        barrilestN[bN] = *textureRectB;
         barrilessN[bN] = spriteSheetB;
         bN++;
-    } else if (tipo == "T") {
-        SDL_Rect windowRectB;
-        SDL_Rect textureRectB;
+    } else if (strcmp1(tipo, "T")) {
+        SDL_Rect *windowRectB = malloc(sizeof(SDL_Rect));
+        SDL_Rect *textureRectB = malloc(sizeof(SDL_Rect));
         SDL_Surface *tempB = IMG_Load("../Data/Images/barril1.png");
         SDL_Texture *spriteSheetB = SDL_CreateTextureFromSurface(renderer, tempB);
         SDL_FreeSurface(tempB);
-        windowRectB.x = 240;
-        windowRectB.y = 25;
-        windowRectB.w = 30;
-        windowRectB.h = 30;
-        textureRectB.x = 0;
-        textureRectB.y = 0;
-        SDL_QueryTexture(spriteSheetB, NULL, NULL, &textureRectB.w, &textureRectB.h);
-        textureRectB.w /= 4;
-        barrilesT[bT] = windowRectB;
-        barrilestT[bT] = textureRectB;
+        windowRectB->x = 240;
+        windowRectB->y = 25;
+        windowRectB->w = 30;
+        windowRectB->h = 30;
+        textureRectB->x = 0;
+        textureRectB->y = 0;
+        SDL_QueryTexture(spriteSheetB, NULL, NULL, &textureRectB->w, &textureRectB->h);
+        textureRectB->w /= 4;
+        barrilesT[bT] = *windowRectB;
+        barrilestT[bT] = *textureRectB;
         barrilessT[bT] = spriteSheetB;
         bT++;
     }
 }
+
 /**
  * Se encarga de poner las imagenes de las vidas en la ventana
  * de manera que sean representativas de las vidas
@@ -131,6 +134,7 @@ void lifes() {
         lifelistT[i] = textureRectML;
     }
 }
+
 /**
  * Cargas las imagenes de donkey en la ventana
  * para que posteriormente se haga la animacion
@@ -149,6 +153,7 @@ void Donkey1() {
     textureRectD.w /= 2;
 
 }
+
 /**
  * Se encarga de cargar las imagenes de la princesa en ventana
  */
@@ -165,6 +170,7 @@ void Princesa() {
     SDL_QueryTexture(spriteSheetP, NULL, NULL, &textureRectP.w, &textureRectP.h);
     textureRectP.w /= 2;
 }
+
 /**
  * es la imagen de mario inicial donde espea los eventos de los teclados
  */
@@ -181,6 +187,7 @@ void Mario() {
     SDL_QueryTexture(spriteSheetM, NULL, NULL, &textureRectM.w, &textureRectM.h);
     textureRectM.w /= 1;
 }
+
 /**
  * se encarga de verificar si mario esta al frente de algunas escaleras
  * y si esta subiendo, de actualizar los valores de verdad para que no se pueda mover
@@ -242,6 +249,7 @@ void onStairs() {
     }
 
 }
+
 /**
  * Actualiza y genera la condicion de gane
  * verifica que mario este lo suficientemente alto para salvar a la princesa
@@ -265,6 +273,7 @@ void win() {
     Mario();
 
 }
+
 /**
  * colisiones para el boton de derecha
  * verifica que la posicion actual de mario este sobre las plataformas
@@ -318,6 +327,7 @@ void moveR(int x) {
     }
 
 }
+
 /**
  * colisiones para el boton de izquierda
  * verifica que la posicion actual de mario este sobre las plataformas
@@ -421,6 +431,7 @@ void death() {
 
     }
 }
+
 /**
  * manejo de los eventos del teclado tales como las flechas o space
  * @param event evento que recibe el programa por el usuario
@@ -521,6 +532,7 @@ void eventos(SDL_Event event) {
         }
     }
 }
+
 /**
  * se evncarga de darle el movimiento a los barriles de manera automatica
  * al ras de las plataformas.
@@ -633,6 +645,7 @@ void moveB(SDL_Rect *bar) {
         bar->y += 1;
     }
 }
+
 /**
  * ventana principal del juego
  * se cargan todas las animaciones y eventos
