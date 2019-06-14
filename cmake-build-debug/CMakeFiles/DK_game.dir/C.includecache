@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/dario1227/CLionProjects/DK_game/Data/game.c
+/home/jonathan/CLionProjects/DKG/Data/game.c
 stdio.h
 -
 stdlib.h
@@ -20,7 +20,7 @@ SDL2/SDL_image.h
 stdbool.h
 -
 
-/home/dario1227/CLionProjects/DK_game/Data/main.c
+/home/jonathan/CLionProjects/DKG/Data/main.c
 stdio.h
 -
 stdlib.h
@@ -34,5 +34,5 @@ SDL2/SDL_image.h
 stdbool.h
 -
 game.c
-/home/dario1227/CLionProjects/DK_game/Data/game.c
+/home/jonathan/CLionProjects/DKG/Data/game.c
 

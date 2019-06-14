@@ -8,43 +8,33 @@
 		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\usr\;CMake Files\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/dario1227/CLionProjects/DK_game/cmake-build-debug"/>
+				<Option working_dir="/home/jonathan/CLionProjects/DKG/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/dario1227/CLionProjects/DK_game/cmake-build-debug"/>
+				<Option working_dir="/home/jonathan/CLionProjects/DKG/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/dario1227/CLionProjects/DK_game/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="DK_game">
-				<Option output="/home/dario1227/CLionProjects/DK_game/cmake-build-debug/DK_game" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/dario1227/CLionProjects/DK_game/cmake-build-debug"/>
+				<Option output="/home/jonathan/CLionProjects/DKG/cmake-build-debug/DK_game" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jonathan/CLionProjects/DKG/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/dario1227/CLionProjects/DK_game/usr/include/SDL2"/>
+					<Add directory="/home/jonathan/CLionProjects/DKG/usr/include/SDL2"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
@@ -52,20 +42,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 DK_game"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 DK_game"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="DK_game/fast">
-				<Option output="/home/dario1227/CLionProjects/DK_game/cmake-build-debug/DK_game" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/dario1227/CLionProjects/DK_game/cmake-build-debug"/>
+				<Option output="/home/jonathan/CLionProjects/DKG/cmake-build-debug/DK_game" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/jonathan/CLionProjects/DKG/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/dario1227/CLionProjects/DK_game/usr/include/SDL2"/>
+					<Add directory="/home/jonathan/CLionProjects/DKG/usr/include/SDL2"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
@@ -73,20 +63,30 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 DK_game/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dario1227/CLionProjects/DK_game/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 DK_game/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/jonathan/CLionProjects/DKG/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jonathan/CLionProjects/DKG/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/dario1227/CLionProjects/DK_game/Data/main.c">
+		<Unit filename="/home/jonathan/CLionProjects/DKG/Data/main.c">
 			<Option target="DK_game"/>
 		</Unit>
-		<Unit filename="/home/dario1227/CLionProjects/DK_game/CMakeLists.txt">
+		<Unit filename="/home/jonathan/CLionProjects/DKG/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/home/dario1227/CLionProjects/DK_game/../../../../usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config.cmake">
+		<Unit filename="/home/jonathan/CLionProjects/DKG/../../../../usr/lib/x86_64-linux-gnu/cmake/SDL2/sdl2-config.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\SDL2\"/>
 		</Unit>
 	</Project>
