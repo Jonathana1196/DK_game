@@ -1,3 +1,0 @@
-/home/jonathan/CLionProjects/TestBarriles/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/jonathan/CLionProjects/TestBarriles/cmake-build-debug/CMakeFiles/TestBarriles.dir
-/home/jonathan/CLionProjects/TestBarriles/cmake-build-debug/CMakeFiles/edit_cache.dir
