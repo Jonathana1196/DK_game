@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jonathan/CLionProjects/TestBarriles/gameController.c
+stdio.h
+-
+gameWindow.h
+/home/jonathan/CLionProjects/TestBarriles/gameWindow.h
+SDL2/SDL.h
+-
+SDL2/SDL_ttf.h
+-
+
+/home/jonathan/CLionProjects/TestBarriles/gameWindow.h
+SDL2/SDL.h
+-
+SDL2/SDL_image.h
+-
+SDL2/SDL_ttf.h
+-
+
