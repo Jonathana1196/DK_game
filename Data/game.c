@@ -757,9 +757,13 @@ void ventana() {
         SDL_RenderCopy(renderer, spriteSheetP, &textureRectP, &windowRectP);
         SDL_RenderPresent(renderer);
         SDL_RenderCopy(renderer, texture, NULL, NULL);
-
-
     }
+    SDL_DestroyTexture(barrilessC);
+    SDL_DestroyTexture(barrilessT);
+    SDL_DestroyTexture(barrilessN);
+    SDL_DestroyTexture(spriteSheetD);
+    SDL_DestroyTexture(spriteSheetM);
+    SDL_DestroyTexture(spriteSheetP);
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_FreeSurface(background);
