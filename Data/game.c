@@ -15,6 +15,8 @@ static bool stop = true;
 static bool stairs = false;
 static int dificult = 2;
 static bool in = false;
+int condicion=0;
+char* tipo;
 static int walk = 0;
 static bool jum = true;
 static int life = 3;
@@ -471,7 +473,11 @@ void eventos(SDL_Event event) {
         Getbarril("N");
 
 
-    } else if (event.key.keysym.sym == SDLK_LEFT && !stairs) {
+    } else if(condicion){
+        condicion=0;
+        Getbarril(tipo);
+    }
+    else if (event.key.keysym.sym == SDLK_LEFT && !stairs) {
         stop = true;
         tempM = IMG_Load("../Data/Images/marioM.png");
         spriteSheetM = SDL_CreateTextureFromSurface(renderer, tempM);

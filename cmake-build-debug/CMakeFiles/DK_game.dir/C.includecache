@@ -6,33 +6,25 @@
 
 #IncludeRegexTransform: 
 
-/home/jonathan/CLionProjects/DKG/Data/game.c
+/home/jonathan/CLionProjects/DKG/Data/cliente.c
+unistd.h
+-
 stdio.h
+-
+game.h
+/home/jonathan/CLionProjects/DKG/Data/game.h
+sys/socket.h
 -
 stdlib.h
 -
-SDL2/SDL.h
+netinet/in.h
 -
-SDL2/SDL_mixer.h
+string.h
 -
-SDL2/SDL_image.h
+pthread.h
 -
-stdbool.h
+time.h
 -
 
-/home/jonathan/CLionProjects/DKG/Data/main.c
-stdio.h
--
-stdlib.h
--
-SDL2/SDL.h
--
-SDL2/SDL_mixer.h
--
-SDL2/SDL_image.h
--
-stdbool.h
--
-game.c
-/home/jonathan/CLionProjects/DKG/Data/game.c
+/home/jonathan/CLionProjects/DKG/Data/game.h
 

@@ -57,8 +57,20 @@ void * conectar_Socket(){
             escuchar();
             return ;
         }
-        if(!strcmp1("T",buffer2)||!strcmp1("C",buffer2)||!strcmp1("N",buffer2)){
-           Getbarril(buffer2);
+        if(!strcmp1("T",buffer2)){
+           condicion=1;
+           tipo="T";
+
+        }
+        if(!strcmp1("C",buffer2)){
+            condicion=1;
+            tipo="C";
+
+        }
+        if(!strcmp1("N",buffer2)){
+            condicion=1;
+            tipo="N";
+
         }
         if(!strcmp1("get",buffer2)){
             char* cosas = "prueba";

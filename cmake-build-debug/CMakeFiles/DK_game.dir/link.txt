@@ -1,1 +1,1 @@
-/usr/bin/cc -g   CMakeFiles/DK_game.dir/Data/main.c.o  -o DK_game -lSDL2 -lSDL2_mixer -lSDL2_image 
+/usr/bin/cc -g   CMakeFiles/DK_game.dir/Data/main.c.o CMakeFiles/DK_game.dir/Data/cliente.c.o  -o DK_game -lSDL2 -lSDL2_mixer -lSDL2_image -lpthread 
