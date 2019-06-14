@@ -46,7 +46,10 @@ static int bC = 0;
 static int bN = 0;
 static int bT = 0;
 static SDL_Rect tempBar;
-
+/**
+ * Los barriles se crean a partir de esta funcion
+ * @param tipo es un char que se compara con los tipos
+ */
 void Getbarril(char *tipo) {
     if (tipo == "C") {
         SDL_Rect windowRectB;
@@ -105,7 +108,10 @@ void Getbarril(char *tipo) {
         bT++;
     }
 }
-
+/**
+ * Se encarga de poner las imagenes de las vidas en la ventana
+ * de manera que sean representativas de las vidas
+ */
 void lifes() {
     for (int i; i < life; i++) {
         SDL_Rect windowRectML;
@@ -125,7 +131,10 @@ void lifes() {
         lifelistT[i] = textureRectML;
     }
 }
-
+/**
+ * Cargas las imagenes de donkey en la ventana
+ * para que posteriormente se haga la animacion
+ */
 void Donkey1() {
     SDL_Surface *tempD = IMG_Load("../Data/Images/Donkey1.png");
     spriteSheetD = SDL_CreateTextureFromSurface(renderer, tempD);
@@ -140,7 +149,9 @@ void Donkey1() {
     textureRectD.w /= 2;
 
 }
-
+/**
+ * Se encarga de cargar las imagenes de la princesa en ventana
+ */
 void Princesa() {
     SDL_Surface *tempP = IMG_Load("../Data/Images/Princesa.png");
     spriteSheetP = SDL_CreateTextureFromSurface(renderer, tempP);
@@ -154,7 +165,9 @@ void Princesa() {
     SDL_QueryTexture(spriteSheetP, NULL, NULL, &textureRectP.w, &textureRectP.h);
     textureRectP.w /= 2;
 }
-
+/**
+ * es la imagen de mario inicial donde espea los eventos de los teclados
+ */
 void Mario() {
     tempM = IMG_Load("../Data/Images/marioR.png");
     spriteSheetM = SDL_CreateTextureFromSurface(renderer, tempM);
@@ -168,7 +181,11 @@ void Mario() {
     SDL_QueryTexture(spriteSheetM, NULL, NULL, &textureRectM.w, &textureRectM.h);
     textureRectM.w /= 1;
 }
-
+/**
+ * se encarga de verificar si mario esta al frente de algunas escaleras
+ * y si esta subiendo, de actualizar los valores de verdad para que no se pueda mover
+ * de izquierda a aderecha
+ */
 void onStairs() {
     if (stop) {
         if (!stairs) {
@@ -225,7 +242,10 @@ void onStairs() {
     }
 
 }
-
+/**
+ * Actualiza y genera la condicion de gane
+ * verifica que mario este lo suficientemente alto para salvar a la princesa
+ */
 void win() {
     Mix_Chunk *winning = Mix_LoadWAV("../Data/Sounds/win1.wav");
     Mix_PlayChannel(-1, winning, 0);
@@ -245,7 +265,11 @@ void win() {
     Mario();
 
 }
-
+/**
+ * colisiones para el boton de derecha
+ * verifica que la posicion actual de mario este sobre las plataformas
+ * @param x posicion en x de mario
+ */
 void moveR(int x) {
     if ((510 <= windowRectM.y) && (x > 275) && !jumping) {
         windowRectM.y -= 1;
@@ -294,7 +318,11 @@ void moveR(int x) {
     }
 
 }
-
+/**
+ * colisiones para el boton de izquierda
+ * verifica que la posicion actual de mario este sobre las plataformas
+ * @param x posicion en x de mario
+ */
 void moveL(int x) {
     if ((510 >= windowRectM.y) && (x < 275) && !jumping && (495 <= windowRectM.y)) {
         windowRectM.y += 1;
@@ -344,7 +372,10 @@ void moveL(int x) {
 
 }
 
-
+/**
+ * Actualiza los valores de choque con barriles
+ * verifica si algun barril esta chocando con mario
+ */
 void death() {
     for (int i = 0; i < bN; i++) {
         if ((barrilesN[i].x - 10) < windowRectM.x && windowRectM.x < (barrilesN[i].x + 10) &&
@@ -390,7 +421,10 @@ void death() {
 
     }
 }
-
+/**
+ * manejo de los eventos del teclado tales como las flechas o space
+ * @param event evento que recibe el programa por el usuario
+ */
 void eventos(SDL_Event event) {
     Mix_Chunk *jumpsund = Mix_LoadWAV("../Data/Sounds/jump.wav");
     Mix_Chunk *walking = Mix_LoadWAV("../Data/Sounds/walking.wav");
@@ -487,7 +521,11 @@ void eventos(SDL_Event event) {
         }
     }
 }
-
+/**
+ * se evncarga de darle el movimiento a los barriles de manera automatica
+ * al ras de las plataformas.
+ * @param bar barril al que se actualiza el valor
+ */
 void moveB(SDL_Rect *bar) {
     if ((bar->x >= 519) && (bar->x <= 525)) {
         for (int x = 0; x != 60; x++) {
@@ -595,7 +633,10 @@ void moveB(SDL_Rect *bar) {
         bar->y += 1;
     }
 }
-
+/**
+ * ventana principal del juego
+ * se cargan todas las animaciones y eventos
+ */
 void ventana() {
     SDL_Init(SDL_INIT_EVERYTHING);
     Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2018);
